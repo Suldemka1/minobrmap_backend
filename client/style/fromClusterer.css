@@ -1,0 +1,9 @@
+.dg-customization__marker .dg-customization__marker_type_mushroom .leaflet-zoom-animated .leaflet-interactive .dg-customization__marker_disappear {
+    background: rgb(238, 238, 238) !important;
+}
+
+.leaflet-popup-content-wrapper{
+    background: rgb(238, 238, 238) !important;
+    height: auto;
+    max-height: 600px !important;
+}

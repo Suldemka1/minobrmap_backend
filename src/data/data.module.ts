@@ -7,6 +7,6 @@ import { DataService } from './data.service';
 @Module({
   controllers: [DataController],
   providers: [DataService],
-  imports: [SequelizeModule.forFeature([Map])]
+  imports: [SequelizeModule.forFeature([Map])],
 })
 export class DataModule {}

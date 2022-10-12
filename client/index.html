@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Образовательная карта РТ</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
+  />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="stylesheet" href="style/fromClusterer.css">
+</head>
+
+<body style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 100px">
+
+<div id="map" style="width: 100%; height: 100%"></div>
+
+<div style="display: flex; flex-direction: column; gap: 20px" class="filter">
+    <div style="display: flex; gap: 10px" class="">
+      <div
+        style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+        <input type="checkbox"
+               id="podved"
+               name="podved"
+               value="false"
+               class="byOrgType"
+               style="display: none"
+        />
+        <label for="podved"><img src="assets/trosta.png" style="width: 50px; height: 50px"></label>
+      </div>
+
+      <div
+        style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+        <input type="checkbox"
+               id="spo"
+               name="spo"
+               value=""
+               class="byOrgType"
+               style="display: none"
+        />
+        <label for="spo"><img src="assets/trosta.png" style="width: 50px; height: 50px"></label>
+      </div>
+
+      <div
+        style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+        <input type="checkbox"
+               id="dop"
+               name="dop"
+               value=""
+               class="byOrgType"
+               style="display: none"
+        />
+        <label for="dop"><img src="assets/trosta.png" style="width: 50px; height: 50px"></label>
+      </div>
+
+      <div
+        style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+        <input type="checkbox"
+               id="school"
+               name="school"
+               value=""
+               class="byOrgType"
+               style="display: none"
+        />
+        <label for="school"><img src="assets/trosta.png" style="width: 50px; height: 50px"></label>
+      </div>
+
+      <div
+        style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+        <input type="checkbox"
+               id="dou"
+               name="dou"
+               value=""
+               class="byOrgType"
+               style="display: none"
+        />
+        <label for="dou"><img src="assets/trosta.png" style="width: 50px; height: 50px"></label>
+      </div>
+    </div>
+
+  <div style="display: flex; gap: 10px" class="">
+    <div
+      style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+      <input type="checkbox"
+             id="trosta"
+             name="trosta"
+             value=""
+             class="byOrgType"
+             style="display: none"
+      />
+      <label for="trosta"><img src="assets/trosta.png" style="width: 50px; height: 50px"></label>
+    </div>
+
+    <div
+      style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+      <input type="checkbox"
+             id="cos"
+             name="cos"
+             value=""
+             class="byOrgType"
+             style="display: none"
+      />
+      <label for="cos"><img src="assets/cos.png" style="width: 50px; height: 50px"></label>
+    </div>
+
+    <div
+      style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+      <input type="checkbox"
+             id="kvant"
+             name="kvant"
+             value=""
+             class="byOrgType"
+             style="display: none"
+      />
+      <label for="kvant"><img src="assets/kvant.png" style="width: 50px; height: 50px"></label>
+    </div>
+
+    <div
+      style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+      <input type="checkbox"
+             id="itcube"
+             name="itcube"
+             value=""
+             class="byOrgType"
+             style="display: none"
+      />
+      <label for="itcube"><img src="assets/itcube.png" style="width: 50px; height: 50px"></label>
+    </div>
+
+    <div
+      style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid black; border-radius: 50%; background: #e6e6e6">
+      <input type="checkbox"
+             id="mastery"
+             name="mastery"
+             value=""
+             class="byOrgType"
+             style="display: none"
+      />
+      <label for="mastery"><img src="assets/trosta.png" style="width: 50px; height: 50px"></label>
+    </div>
+  </div>
+
+  <!--  <fieldset>-->
+  <!--    <legend>По программам</legend>-->
+
+  <!--    <label class="checkbox-ios">-->
+  <!--      <input type="checkbox" id="trosta" name="trosta" class="byPropName" />-->
+  <!--      <span class="checkbox-ios-switch"></span>-->
+  <!--      <label for="trosta">Точка роста</label>-->
+  <!--    </label>-->
+
+  <!--    <label class="checkbox-ios">-->
+  <!--      <input type="checkbox" id="scoc" name="scoc" class="byPropName" />-->
+  <!--      <span class="checkbox-ios-switch"></span>-->
+  <!--      <label for="scoc">Цифровая образовательная среда</label>-->
+  <!--    </label>-->
+
+  <!--    <label class="checkbox-ios">-->
+  <!--      <input type="checkbox" id="kvant" name="kvant" class="byPropName" />-->
+  <!--      <span class="checkbox-ios-switch"></span>-->
+  <!--      <label for="kvant">Кванториум</label>-->
+  <!--    </label>-->
+
+  <!--    <label class="checkbox-ios">-->
+  <!--      <input-->
+  <!--        type="checkbox"-->
+  <!--        id="itcube"-->
+  <!--        name="it-cube"-->
+  <!--        class="byPropName"-->
+  <!--      />-->
+  <!--      <span class="checkbox-ios-switch"></span>-->
+  <!--      <label for="itcube">it-куб</label>-->
+  <!--    </label>-->
+
+</div>
+
+<script type="text/javascript" src="http://maps.api.2gis.ru/1.0"></script>
+<script src="https://yastatic.net/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+<script src="https://unpkg.com/@2gis/mapgl-clusterer@^2/dist/clustering.js"></script>
+<script src="https://maps.api.2gis.ru/2.0/cluster_realworld.js"></script>
+<script src="script/script.js"></script>
+<script src="script/notused/schooldata.js"></script>
+<script src="script/functions_2.0.js"></script>
+</body>
+</html>
